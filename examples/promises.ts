@@ -2,7 +2,7 @@ const promise = new Promise((resolve, reject) => resolve("value"));
 promise;
 
 async function returnsPromise() {
-  return "value";
+	return "value";
 }
 returnsPromise().then(() => {});
 

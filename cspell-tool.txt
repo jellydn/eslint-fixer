@@ -1,2 +1,3 @@
 tseslint
 outdir
+biomejs
