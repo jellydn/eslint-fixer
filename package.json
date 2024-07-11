@@ -1,45 +1,40 @@
 {
-	"name": "@jellydn/eslint-fixer",
-	"version": "0.2.0-0",
-	"keywords": ["fixer", "typescript"],
-	"license": "MIT",
-	"author": "Huynh Duc Dung",
-	"type": "module",
-	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
-	"bin": "./dist/cli.mjs",
-	"files": ["dist", "eslint.config.js"],
-	"scripts": {
-		"build": "pkgroll --env.NODE_ENV=production --minify",
-		"check": "biome check --write",
-		"cli": "npx tsx ./src/cli.ts",
-		"compile": "bun build ./index.ts --outfile ./bin/eslint-fixer --compile --target bun-darwin-arm64",
-		"dev": "bun run index.ts",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"dependencies": {
-		"@eslint/js": "9.6.0",
-		"@types/eslint__js": "8.42.3",
-		"eslint": "9.6.0",
-		"typescript-eslint": "7.16.0"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@types/bun": "latest",
-		"pkgroll": "^2.1.1",
-		"tsx": "^4.16.2"
-	},
-	"peerDependencies": {
-		"typescript": "^5.5.3"
-	},
-	"tsup": {
-		"entry": ["index.ts"],
-		"splitting": false,
-		"dts": true,
-		"sourcemap": true,
-		"format": ["cjs", "esm"],
-		"legacyOutput": true,
-		"target": "node18",
-		"clean": true
-	}
+  "name": "@jellydn/eslint-fixer",
+  "version": "0.2.0-0",
+  "keywords": [
+    "fixer",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Huynh Duc Dung",
+  "type": "module",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/cli.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pkgroll --clean-dist --env.NODE_ENV=production",
+    "check": "biome check --write",
+    "cli": "npx tsx ./src/cli.ts",
+    "compile": "bun build ./index.ts --outfile ./bin/eslint-fixer --compile --target bun-darwin-arm64",
+    "dev": "bun run index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@eslint/js": "9.6.0",
+    "@types/eslint__js": "8.42.3",
+    "eslint": "9.6.0",
+    "typescript-eslint": "7.16.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/bun": "latest",
+    "pkgroll": "^2.1.1",
+    "tsx": "^4.16.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.3"
+  }
 }

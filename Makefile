@@ -14,6 +14,13 @@ compile:
 	@echo "Compiling..."
 	@bun run compile
 
+.PHONY: build
+build: install
+	@echo "Building..."
+	@bun run build
+	@echo "Copy eslint.config.js to dist folder..."
+	@cp eslint.config.js dist
+
 .PHONY: check
 check:
 	@echo "Checking..."
