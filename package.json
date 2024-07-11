@@ -1,10 +1,7 @@
 {
 	"name": "@jellydn/eslint-fixer",
 	"version": "0.1.1",
-	"keywords": [
-		"fixer",
-		"typescript"
-	],
+	"keywords": ["fixer", "typescript"],
 	"license": "MIT",
 	"author": "Huynh Duc Dung",
 	"type": "module",
@@ -20,10 +17,7 @@
 	},
 	"module": "index.ts",
 	"bin": "./dist/index.js",
-	"files": [
-		"dist",
-		"eslint.config.js"
-	],
+	"files": ["dist", "eslint.config.js"],
 	"scripts": {
 		"build": "tsup",
 		"check": "biome check --write",
@@ -47,16 +41,11 @@
 		"typescript": "^5.5.3"
 	},
 	"tsup": {
-		"entry": [
-			"index.ts"
-		],
+		"entry": ["index.ts"],
 		"splitting": false,
 		"dts": true,
 		"sourcemap": true,
-		"format": [
-			"cjs",
-			"esm"
-		],
+		"format": ["cjs", "esm"],
 		"legacyOutput": true,
 		"target": "node18",
 		"clean": true
