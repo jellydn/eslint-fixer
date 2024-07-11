@@ -63,6 +63,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npx --yes oxlint@0.0.0 --deny-warnings # change to the latest release
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Biome
+        uses: biomejs/setup-biome@v2
+        with:
+          version: latest
+      - name: Run Biome
+        run: biome ci .
 ``
 
 ## How to publish
