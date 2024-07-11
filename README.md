@@ -38,6 +38,13 @@ npm install --global @jellydn/eslint-fixer
 npx @jellydn/eslint-fixer
 ```
 
+## How to publish
+
+```sh
+make build
+npm publish --access public
+```
+
 ## Resources
 
 - [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
