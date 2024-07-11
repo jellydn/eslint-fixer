@@ -14,7 +14,6 @@
 
 We will continue to use `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin` to lint TypeScript files until this issue [☂️ Type-aware linter · Issue #3187 · biomejs/biome](https://github.com/biomejs/biome/issues/3187) is resolved.
 
-
 ## Enabled rules
 
 The following rules are enabled to effectively lint TypeScript files:
@@ -143,9 +142,9 @@ npm publish --access public
 
 👤 **Dung Huynh**
 
--   Website: https://productsway.com/
--   Twitter: [@jellydn](https://twitter.com/jellydn)
--   Github: [@jellydn](https://github.com/jellydn)
+- Website: https://productsway.com/
+- Twitter: [@jellydn](https://twitter.com/jellydn)
+- Github: [@jellydn](https://github.com/jellydn)
 
 ## Show your support
 
