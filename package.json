@@ -1,62 +1,51 @@
 {
-  "name": "@jellydn/eslint-fixer",
-  "version": "0.1.0",
-  "keywords": [
-    "fixer",
-    "typescript"
-  ],
-  "license": "MIT",
-  "author": "Huynh Duc Dung",
-  "type": "module",
-  "exports": {
-    "require": {
-      "types": "./dist/index.d.cts",
-      "default": "./dist/index.cjs"
-    },
-    "import": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
-  "module": "index.ts",
-  "bin": "./dist/index.js",
-  "files": [
-    "dist",
-    "eslint.config.js"
-  ],
-  "scripts": {
-    "build": "tsup",
-    "check": "biome check --write",
-    "compile": "bun build ./index.ts --outfile ./bin/eslint-fixer --compile --target bun-darwin-arm64",
-    "dev": "bun run index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@eslint/js": "9.6.0",
-    "@types/eslint__js": "8.42.3",
-    "eslint": "9.6.0",
-    "typescript-eslint": "7.16.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@types/bun": "latest",
-    "tsup": "^8.1.0",
-    "tsx": "^4.16.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.5.3"
-  },
-  "tsup": {
-    "entry": [
-      "index.ts"
-    ],
-    "splitting": false,
-    "dts": true,
-    "sourcemap": true,
-    "format": [
-      "cjs",
-      "esm"
-    ],
-    "clean": true
-  }
+	"name": "@jellydn/eslint-fixer",
+	"version": "0.1.0",
+	"keywords": ["fixer", "typescript"],
+	"license": "MIT",
+	"author": "Huynh Duc Dung",
+	"type": "module",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"module": "index.ts",
+	"bin": "./dist/index.js",
+	"files": ["dist", "eslint.config.js"],
+	"scripts": {
+		"build": "tsup",
+		"check": "biome check --write",
+		"compile": "bun build ./index.ts --outfile ./bin/eslint-fixer --compile --target bun-darwin-arm64",
+		"dev": "bun run index.ts",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@eslint/js": "9.6.0",
+		"@types/eslint__js": "8.42.3",
+		"eslint": "9.6.0",
+		"typescript-eslint": "7.16.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/bun": "latest",
+		"tsup": "^8.1.0",
+		"tsx": "^4.16.2"
+	},
+	"peerDependencies": {
+		"typescript": "^5.5.3"
+	},
+	"tsup": {
+		"entry": ["index.ts"],
+		"splitting": false,
+		"dts": true,
+		"sourcemap": true,
+		"format": ["cjs", "esm"],
+		"clean": true
+	}
 }
