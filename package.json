@@ -1,9 +1,11 @@
 {
-  "name": "@jellydn/eslint-fixer",
+  "name": "@productsway/eslint-fixer",
   "version": "0.1.0",
   "type": "module",
   "module": "index.ts",
   "bin": "./dist/index.js",
+  "license": "MIT",
+  "author": "Huynh Duc Dung",
   "files": [
     "dist"
   ],
