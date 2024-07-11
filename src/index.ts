@@ -1,8 +1,6 @@
-#!/bin/env node
-
 import { ESLint } from "eslint";
 
-async function main(patterns: string) {
+export async function eslintFixer(patterns: string) {
 	// 1. Create an instance.
 	const eslint = new ESLint({
 		fix: true,
@@ -23,17 +21,3 @@ async function main(patterns: string) {
 	// 5. Output it.
 	console.log(resultText);
 }
-
-// get the patterns from the command line arguments
-// ❯ ./bin/eslint-fixer "examples/**/*.js,examples/**/*.ts"
-
-const patterns = process.argv[2];
-if (!patterns) {
-	console.error("Please provide the patterns to lint.");
-	process.exit(1);
-}
-
-main(patterns).catch((error) => {
-	process.exitCode = 1;
-	console.error(error);
-});
