@@ -35,14 +35,66 @@ To use eslint-fixer, follow these steps:
 npm install --global @jellydn/eslint-fixer
 
 # Run eslint-fixer
-npx @jellydn/eslint-fixer
+npx @jellydn/eslint-fixer "examples/**/*.ts"
+```
+
+## How to use with Neovim
+
+To use eslint-fixer with lazy.nvim and nvim-lint. What you need is add below to your custom linter.
+
+```lua
+return {
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    opts = {
+      linters_by_ft = {
+        ["*"] = { "cspell", "codespell" },
+        javascript = { "oxlint" },
+        typescript = { "oxlint", "eslint_fixer" },
+        javascriptreact = { "oxlint" },
+        typescriptreact = { "oxlint" },
+      },
+    },
+    init = function()
+      -- Register customer linter
+      require("lint").linters.eslint_fixer = {
+        name = "eslint_fixer",
+        cmd = "eslint-fixer", -- e.g: npm install -g @jellydn/eslint-fixer
+        stdin = false,
+        stream = "stdout",
+        ignore_exitcode = true,
+        parser = function(output, bufnr)
+          local trimmed_output = vim.trim(output)
+          if trimmed_output == "" then
+            return {}
+          end
+          -- Skip if Parsing error on output
+          if string.match(trimmed_output, "Parsing error") then
+            return {}
+          end
+
+          -- Parse output base on Eslint errorformat
+          local diagnostic = require("lint.parser").from_errorformat("%f %l:%c %m", {
+            error = vim.diagnostic.severity.ERROR,
+          })(trimmed_output, bufnr)
+
+          return diagnostic
+        end,
+      }
+    end,
+    config = function(_, opts)
+      -- Your setup here
+    end,
+  },
+}
 ```
 
 ## GitHub Actions
 
 To use eslint-fixer in GitHub Actions, follow these steps:
 
-````yml
+```yml
 name: ESLint Fixer
 
 on:
@@ -74,14 +126,14 @@ jobs:
           version: latest
       - name: Run Biome
         run: biome ci .
-``
+```
 
 ## How to publish
 
 ```sh
 make build
 npm publish --access public
-````
+```
 
 ## Resources
 

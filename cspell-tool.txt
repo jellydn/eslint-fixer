@@ -1,5 +1,14 @@
 tseslint
 jellydn
-outdir
+Huynh
+pkgroll
 biomejs
+Neovim
+nvim
+mfussenegger
+codespell
+oxlint
+exitcode
+bufnr
+errorformat
 automerge
