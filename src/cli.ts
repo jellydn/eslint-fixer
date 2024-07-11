@@ -1,9 +1,32 @@
-// get the patterns from the command line arguments
+// Usage:
 // ❯ ./bin/eslint-fixer "examples/**/*.js,examples/**/*.ts"
 
-import { eslintFixer } from "./linter";
+import { cli } from "cleye";
 
-const patterns = process.argv[2];
+import { eslintFixer } from "./linter";
+import pkgJson from "../package.json";
+
+const argv = cli({
+	name: "eslint-fixer",
+
+	parameters: [
+		"<patterns>", // patterns is required
+	],
+
+	flags: {},
+
+	version: pkgJson.version,
+
+	help: {
+		examples: [
+			'npx @jellydn/eslint-fixer "src/**/*.ts"',
+			"",
+			'npx @jellydn/eslint-fixer "apps/**/*.ts,packages/**/*.ts"',
+		],
+	},
+});
+
+const patterns = argv._.patterns;
 if (!patterns) {
 	console.error("Please provide the patterns to lint.");
 	process.exit(1);
