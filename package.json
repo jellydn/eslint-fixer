@@ -1,6 +1,6 @@
 {
   "name": "@jellydn/eslint-fixer",
-  "version": "0.2.0-1",
+  "version": "0.2.0",
   "keywords": [
     "fixer",
     "typescript"
