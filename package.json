@@ -1,19 +1,14 @@
 {
 	"name": "@jellydn/eslint-fixer",
 	"version": "0.2.0",
-	"keywords": [
-		"fixer",
-		"typescript"
-	],
+	"keywords": ["fixer", "typescript"],
 	"license": "MIT",
 	"author": "Huynh Duc Dung",
 	"type": "module",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
 	"bin": "./dist/cli.mjs",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"scripts": {
 		"build": "pkgroll --clean-dist --env.NODE_ENV=production",
 		"check": "biome check --write",
