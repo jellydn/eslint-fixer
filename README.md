@@ -6,13 +6,18 @@
   </a>
 </p>
 
+## Prerequisites
+
+- Node.js >= 18.20.0 or later
+
 ## Motivation
 
-Until this [☂️ Type-aware linter · Issue #3187 · biomejs/biome](https://github.com/biomejs/biome/issues/3187) is resolved, we continue to use `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin` to lint TypeScript files.
+We will continue to use `@typescript-eslint/parser` and `@typescript-eslint/eslint-plugin` to lint TypeScript files until this issue [☂️ Type-aware linter · Issue #3187 · biomejs/biome](https://github.com/biomejs/biome/issues/3187) is resolved.
 
-## Recommended Rules
 
-Add the following recommended rules to your ESLint configuration for effective linting of TypeScript files:
+## Enabled rules
+
+The following rules are enabled to effectively lint TypeScript files:
 
 ```json
 {
@@ -28,19 +33,17 @@ Add the following recommended rules to your ESLint configuration for effective l
 
 ## Usage
 
-To use eslint-fixer, follow these steps:
-
 ```sh
 # Install eslint-fixer
-npm install --global @jellydn/eslint-fixer
+npm install -g @jellydn/eslint-fixer
 
-# Run eslint-fixer
-npx @jellydn/eslint-fixer "examples/**/*.ts"
+# Or Run eslint-fixer
+npx @jellydn/eslint-fixer "examples/**/*.ts,examples/**/*.tsx"
 ```
 
 ## How to use with Neovim
 
-To use eslint-fixer with lazy.nvim and nvim-lint. What you need is add below to your custom linter.
+To use eslint-fixer with lazy.nvim and nvim-lint, you should define as a custom linter:
 
 ```lua
 return {
@@ -49,11 +52,8 @@ return {
     event = "VeryLazy",
     opts = {
       linters_by_ft = {
-        ["*"] = { "cspell", "codespell" },
-        javascript = { "oxlint" },
+        -- Other linters
         typescript = { "oxlint", "eslint_fixer" },
-        javascriptreact = { "oxlint" },
-        typescriptreact = { "oxlint" },
       },
     },
     init = function()
@@ -139,6 +139,18 @@ npm publish --access public
 
 - [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
 
-## Show Your Support
+## Author
 
-If this project has helped you, please give it a ⭐️!
+👤 **Dung Huynh**
+
+-   Website: https://productsway.com/
+-   Twitter: [@jellydn](https://twitter.com/jellydn)
+-   Github: [@jellydn](https://github.com/jellydn)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+[![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
+[![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)
+[![buymeacoffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dunghd)
