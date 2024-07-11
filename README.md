@@ -42,7 +42,7 @@ npx @jellydn/eslint-fixer
 
 To use eslint-fixer in GitHub Actions, follow these steps:
 
-```yml
+````yml
 name: ESLint Fixer
 
 on:
@@ -70,7 +70,7 @@ jobs:
 ```sh
 make build
 npm publish --access public
-```
+````
 
 ## Resources
 
