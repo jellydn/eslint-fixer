@@ -1,7 +1,7 @@
 // get the patterns from the command line arguments
 // ❯ ./bin/eslint-fixer "examples/**/*.js,examples/**/*.ts"
 
-import { eslintFixer } from "./index";
+import { eslintFixer } from "./linter";
 
 const patterns = process.argv[2];
 if (!patterns) {
