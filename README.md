@@ -38,6 +38,33 @@ npm install --global @jellydn/eslint-fixer
 npx @jellydn/eslint-fixer
 ```
 
+## GitHub Actions
+
+To use eslint-fixer in GitHub Actions, follow these steps:
+
+```yml
+name: ESLint Fixer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  eslint-fixer:
+    name: ESLint Fixer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx --yes @jellydn/eslint-fixer@0.2.0 "examples/**/*.ts" # change to the latest release
+  oxlint:
+    name: Lint JS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx --yes oxlint@0.0.0 --deny-warnings # change to the latest release
+``
+
 ## How to publish
 
 ```sh
