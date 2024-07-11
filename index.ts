@@ -1,3 +1,5 @@
+#!/bin/env node
+
 import { ESLint } from "eslint";
 
 async function main(patterns: string) {
