@@ -1,3 +1,5 @@
 tseslint
+jellydn
 outdir
 biomejs
+automerge
