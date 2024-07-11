@@ -3,8 +3,8 @@
 
 import { cli } from "cleye";
 
-import { eslintFixer } from "./linter";
 import pkgJson from "../package.json";
+import { eslintFixer } from "./linter";
 
 const argv = cli({
 	name: "eslint-fixer",
