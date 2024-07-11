@@ -32,10 +32,10 @@ To use eslint-fixer, follow these steps:
 
 ```sh
 # Install eslint-fixer
-npm install --global eslint-fixer
+npm install --global @jellydn/eslint-fixer
 
 # Run eslint-fixer
-npx eslint-fixer
+npx @jellydn/eslint-fixer
 ```
 
 ## Resources
