@@ -107,7 +107,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npx --yes @jellydn/eslint-fixer@0.2.0 "examples/**/*.ts" # change to the latest release
+      - run: npx --yes @jellydn/eslint-fixer@0.0.0 "examples/**/*.ts" # change to the latest release
   oxlint:
     name: Lint JS
     runs-on: ubuntu-latest
@@ -130,13 +130,13 @@ jobs:
 ## How to publish
 
 ```sh
-make build
-npm publish --access public
+make release
 ```
 
 ## Resources
 
 - [Linting with Type Information | typescript-eslint](https://typescript-eslint.io/getting-started/typed-linting)
+- [jellydn/biome-interactive: Simple interactive to install biome to your project. Migrate from ESLint and Prettier with a single command](https://github.com/jellydn/biome-interactive)
 
 ## Author
 
