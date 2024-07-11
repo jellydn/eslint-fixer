@@ -1,11 +1,15 @@
 {
   "name": "@productsway/eslint-fixer",
   "version": "0.1.0",
+  "keywords": [
+    "fixer",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Huynh Duc Dung",
   "type": "module",
   "module": "index.ts",
   "bin": "./dist/index.js",
-  "license": "MIT",
-  "author": "Huynh Duc Dung",
   "files": [
     "dist"
   ],

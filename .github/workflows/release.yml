@@ -39,7 +39,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: bun install
         if: ${{ steps.release.outputs.release_created }}
-      - run: bun run publish
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
