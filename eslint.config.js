@@ -38,7 +38,18 @@ export default tseslint.config(
 		},
 	},
 	{
-		files: ["**/*.js"],
+		files: ["**/*.js", "**/*.config.js", "**/*.config.ts"],
 		...tseslint.configs.disableTypeChecked,
+	},
+	{
+		ignores: [
+			"**/node_modules/**",
+			"**/dist/**",
+			"**/build/**",
+			"**/out/**",
+			"**/test/**",
+			"**/tests/**",
+			"**/public/**",
+		],
 	},
 );
