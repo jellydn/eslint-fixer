@@ -1,7 +1,7 @@
-<h1 align="center">Welcome to eslint-fixer 👋</h1>
+<h1 align="center">Welcome to @jellydn/eslint-fixer 👋</h1>
 
 <p>
-  <a href="https://www.npmjs.com/package/eslint-fixer" target="_blank">
+  <a href="https://www.npmjs.com/package/@jellydn/eslint-fixer" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/eslint-fixer.svg">
   </a>
 </p>
