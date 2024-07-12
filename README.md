@@ -49,12 +49,7 @@ return {
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
-    opts = {
-      linters_by_ft = {
-        -- Other linters
-        typescript = { "oxlint", "eslint_fixer" },
-      },
-    },
+    opts = {},
     init = function()
       -- Register customer linter
       require("lint").linters.eslint_fixer = {
@@ -85,6 +80,27 @@ return {
     config = function(_, opts)
       -- Your setup here
     end,
+    keys = {
+      {
+        -- Run lint by name
+        "<leader>rl",
+        function()
+          local items = {
+            -- Eslint fixer
+            "eslint_fixer", -- npm install -g @jellydn/eslint-fixer
+          }
+
+          vim.ui.select(items, {
+            prompt = "Select Linter to run",
+          }, function(choice)
+            if choice ~= nil then
+              run_linter_by(choice)
+            end
+          end)
+        end,
+        desc = "Run Nvim Lint",
+      }
+    }
   },
 }
 ```
