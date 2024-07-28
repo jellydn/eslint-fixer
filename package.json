@@ -1,12 +1,19 @@
 {
 	"name": "@jellydn/eslint-fixer",
-	"version": "0.3.0",
-	"keywords": ["fixer", "typescript", "eslint", "eslint-fixer"],
+	"version": "0.3.1",
+	"keywords": [
+		"fixer",
+		"typescript",
+		"eslint",
+		"eslint-fixer"
+	],
 	"license": "MIT",
 	"author": "Huynh Duc Dung",
 	"type": "module",
 	"bin": "./dist/cli.mjs",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"build": "pkgroll --minify --sourcemap --clean-dist --env.NODE_ENV=production",
 		"check": "biome check --write",
