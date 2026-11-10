@@ -14,22 +14,22 @@ jobs:
     name: ESLint Fixer
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
       - run: npx --yes @jellydn/eslint-fixer@latest "examples/**/*.ts,examples/**/*.js"
   oxlint:
     name: Lint JS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
       - run: npx --yes oxlint@latest --deny-warnings
 
   biome-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
       - name: Setup Biome
-        uses: biomejs/setup-biome@v2
+        uses: biomejs/setup-biome@v2.7.1
         with:
           version: latest
       - name: Run Biome
